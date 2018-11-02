@@ -1,4 +1,4 @@
-# DNP Exercises 06 - Data Access
+# DNP Exercises 10 - Data Access
 
 Today we will be creating an animal shelter “Dotnetimals”, that sells lost and abandoned cats!
 
@@ -13,12 +13,15 @@ Create a new web api project (`dotnet new webapi`).
 Inside your newly created project, create a *Data* folder. Inside the Data folder, create an *Entities* folder that holds the entities of our animal shelter. Since the cats should be sellable (at a cheap price) for anyone interested, and that people can order multiple cats, the entities should be as follows:
 
 * **Cat**  
+
 int Id, string Name, string Color, decimal Price, DateTime Birthdate, string FavoriteDish
 
 * **Order**  
+
 int Id, DateTime OrderDate, string OrderNumber, ICollection<OrderItem> Items
 
 * **OrderItem**  
+
 int Id, Cat cat, int quantity, Order order
 
 ## Exercise 3, Applying Data Annotations
