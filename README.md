@@ -45,6 +45,8 @@ Create a constructor for the `CatContext` that takes one options argument of typ
 
 We need to decide on what [database provider](https://docs.microsoft.com/en-us/ef/core/providers/) to use. For this project we will be using [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-editions-express). If you don’t want to install and set up the server, you can use SQLite with EF Core instead.
 
+Install the package for the database provider that you want to target.
+
 Next, we need to install an application with which we can manage our database.
 
 Install [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms) (or [DB Browser for SQLite](http://sqlitebrowser.org/) if you are using SQLite).
@@ -56,8 +58,6 @@ Before we can use our `DbContext`, we need to configure it.
 In the `ConfigureServices` method inside *Startup.cs*, add the `DbContext` as a service so that it can be used anywhere in our application using *dependency injection*. Use the `UseSqlServer` method to configure the connection. (the connection string should be stored in *appsettings.json*)
 
 ## Exercise 7, EF Tooling and Migrations
-
-Update your *.csproj* file so that the Entity Framework CLI tooling can be used.
 
 Add an initial migration using `dotnet ef migrations add [migration name]`. This adds migration files to your project according to the current database schema and the entities in your code.
 
@@ -103,8 +103,7 @@ If you want to try out a non-relational solution for storing and accessing data,
 
 Here are some pointers to get you started:
 
-https://docs.mongodb.com/manual/tutorial/getting-started/  
-https://docs.mongodb.com/ecosystem/drivers/csharp/
-
+    - https://docs.mongodb.com/manual/tutorial/getting-started/  
+    - https://docs.mongodb.com/ecosystem/drivers/csharp/
 
 ![alt](https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBKI9xd.img?h=416&w=624&m=6&q=60&u=t&o=f&l=f&x=2173&y=1262)
